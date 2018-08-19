@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +18,16 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
 
-        Log.d("xxxxxxxx", "onCreate: " + JniUtils.getJniString());
+        tv.setText(JniUtils.getJniString());
+
+        JniUtils jniUtils = new JniUtils();
+
+        Log.d(TAG, "前: " + jniUtils.name);
+
+        jniUtils.accessJavaStringField();
+
+        Log.d(TAG, "后: " + jniUtils.name);
+
     }
 
 

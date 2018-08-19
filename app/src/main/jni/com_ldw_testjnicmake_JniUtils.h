@@ -15,6 +15,14 @@ extern "C" {
 JNIEXPORT jstring JNICALL Java_com_ldw_testjnicmake_JniUtils_getJniString
   (JNIEnv *, jclass);
 
+/*
+ * Class:     com_ldw_testjnicmake_JniUtils
+ * Method:    accessJavaStringField
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_ldw_testjnicmake_JniUtils_accessJavaStringField
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif
